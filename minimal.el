@@ -85,9 +85,7 @@
       (menu-bar-mode +1))
     (when (and (not tool-bar-mode) minimal-zapped-tool-bar)
       (tool-bar-mode +1)))
-   (remove-hook 'after-change-major-mode-hook 'minimal-mode))
-  ;; (redraw-frame (window-frame (selected-window)))
-  )
+   (remove-hook 'after-change-major-mode-hook 'minimal-mode)))
 
 (defun minimal-save-and-zap-mode-line (&optional buffer)
   ;; Save buffer's `mode-line-format' and remove mode line
