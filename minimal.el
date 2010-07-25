@@ -44,11 +44,18 @@
 (defvar minimal-zap-tool-bar t
   "Should the tool bar be removed?")
 
-(defvar minimal-mode-map (make-sparse-keymap))
-(copy-face 'mode-line 'minimal-saved-mode-line)
-(copy-face 'mode-line 'minimal-mode-line)
-(set-face-attribute 'minimal-mode-line nil :background "red" :height 0.1)
+(defvar minimal-mode-line-background "red"
+  "Background colour for active mode line face when minimal minor
+  mode is active")
 
+(defvar minimal-mode-line-inactive-background "grey"
+  "Background colour for inactive mode line face when minimal
+  minor mode is active")
+
+(defvar minimal-mode-line-height 0.1
+  "Height of mode line when minimal minor mode is active")
+
+(defvar minimal-mode-map (make-sparse-keymap))
 (defvar minimal-zapped-scroll-bar nil)
 (defvar minimal-zapped-menu-bar nil)
 (defvar minimal-zapped-tool-bar nil)
@@ -63,7 +70,22 @@
     ;; turn on
     (when minimal-zap-mode-line
       (mapc 'minimal-save-and-zap-mode-line (buffer-list))
-      (copy-face 'minimal-mode-line 'mode-line))
+      (unless (facep 'minimal-mode-line)
+	(copy-face 'mode-line 'minimal-mode-line))
+      (set-face-attribute 'minimal-mode-line nil
+			  :background minimal-mode-line-background
+			  :height minimal-mode-line-height)
+      (setq face-remapping-alist
+	    (cons '(mode-line minimal-mode-line)
+		  (assq-delete-all 'mode-line face-remapping-alist)))
+      (unless (facep 'minimal-mode-line-inactive)
+	(copy-face 'mode-line-inactive 'minimal-mode-line-inactive))
+      (set-face-attribute 'minimal-mode-line-inactive nil
+			  :background minimal-mode-line-inactive-background
+			  :height minimal-mode-line-height)
+      (setq face-remapping-alist
+	    (cons '(mode-line-inactive minimal-mode-line-inactive)
+		  (assq-delete-all 'mode-line-inactive face-remapping-alist))))
     (when (and scroll-bar-mode minimal-zap-scroll-bar)
       (setq minimal-zapped-scroll-bar t)
       (scroll-bar-mode -1))
@@ -77,9 +99,12 @@
    (t
     ;; turn off
     (when minimal-zap-mode-line
-      (mapc 'minimal-restore-mode-line (buffer-list))
-      (copy-face 'minimal-saved-mode-line 'mode-line))
-    (when (and (not scroll-bar-mode) minimal-zapped-scroll-bar)
+       (setq face-remapping-alist
+	    (assq-delete-all 'mode-line
+			     (assq-delete-all 'mode-line-inactive
+					      face-remapping-alist))))
+    (mapc 'minimal-restore-mode-line (buffer-list))
+   (when (and (not scroll-bar-mode) minimal-zapped-scroll-bar)
       (scroll-bar-mode +1))
     (when (and (not menu-bar-mode) minimal-zapped-menu-bar)
       (menu-bar-mode +1))
