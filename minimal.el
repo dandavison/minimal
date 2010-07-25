@@ -69,7 +69,7 @@
    (minimal-mode
     ;; turn on
     (when minimal-zap-mode-line
-      (mapc 'minimal-save-and-zap-mode-line (buffer-list))
+      (minimal-save-and-zap-mode-line)
       (unless (facep 'minimal-mode-line)
 	(copy-face 'mode-line 'minimal-mode-line))
       (set-face-attribute 'minimal-mode-line nil
@@ -103,7 +103,7 @@
 	    (assq-delete-all 'mode-line
 			     (assq-delete-all 'mode-line-inactive
 					      face-remapping-alist))))
-    (mapc 'minimal-restore-mode-line (buffer-list))
+    (minimal-restore-mode-line)
    (when (and (not scroll-bar-mode) minimal-zapped-scroll-bar)
       (scroll-bar-mode +1))
     (when (and (not menu-bar-mode) minimal-zapped-menu-bar)
