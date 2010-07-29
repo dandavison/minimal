@@ -3,8 +3,8 @@
 
 [[file:davison-minimal-research.png][file:davison-minimal-research-thumb.png]]
 
-[[http://github.com/dandavison/minimal][minimal.el]] adds a minor mode providing a minimalist visual appearance
-for Emacs[1].
+[[http://github.com/dandavison/minimal][minimal.el]] adds a minor mode providing a minimalist visual
+appearance[1] for Emacs.
 
 Toggle the minor mode with =M-x minimal-mode=. By default, this gets
 rid of
@@ -45,6 +45,7 @@ variables are intended for user customizations:
 
 * Footnotes
 
-[1] The screenshot emacs using Org mode source code features running
-in fullscreen mode; the desktop is used for Hubble image backdrop only
-(no icons) via partial transparency; gnome under ubuntu 10.04.
+[1] The screenshot show emacs using [[http://orgmode.org/][Org-mode]] [[http://orgmode.org/manual/Working-With-Source-Code.html#Working-With-Source-Code][source code functionality]]
+running in fullscreen mode; the desktop is used for the Hubble
+telescope image backdrop only (no icons) via partial [[http://www.emacswiki.org/emacs/TransparentEmacs][transparency]];
+gnome under ubuntu 10.04.
