@@ -42,6 +42,7 @@ variables are intended for user customizations:
   "Height of mode line when minimal minor mode is active")
 #+end_src
 
+Please obtain minimal.el from the [[http://github.com/dandavison/minimal][github repository]].
 
 * Footnotes
 
