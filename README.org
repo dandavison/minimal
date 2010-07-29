@@ -1,4 +1,8 @@
-#+title: Minimalist appearance for Emacs
+#+title:Minimalist appearance for Emacs
+
+[[file:davison-minimal-research-thumb.png]]
+
+See [[http://dandavison.github.com/minimal/][minimal.el webpage]].
 
 minimal.el adds a minor mode providing a minimalist appearance for
 Emacs. Toggle the minor mode with =M-x minimal-mode=. By default, this
