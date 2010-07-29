@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+lang="en" xml:lang="en">
+<head>
+<title>minimal.el: minimalist visual appearance for Emacs</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2010-07-29 12:18:56 EDT"/>
+<meta name="author" content="Dan Davison"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style><style type="text/css">
+pre {
+    border: 1pt solid #AEBDCC;
+    background-color: #232323;
+    color: #E6E1DC;
+    padding: 5pt;
+    font-family: courier, monospace;
+    font-size: 90%;
+    overflow:auto;
+}
+</style>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+
+<h1 class="title">minimal.el: minimalist visual appearance for Emacs</h1>
+
+
+<p>
+<a href="davison-minimal-research.png"><img src="davison-minimal-research-thumb.png"/></a>
+</p>
+<p>
+minimal.el adds a minor mode providing a minimalist appearance for
+Emacs. Toggle the minor mode with <code>M-x minimal-mode</code>. By default, this
+gets rid of
+</p>
+<ul>
+<li>
+mode line
+</li>
+<li>
+scroll bars
+</li>
+<li>
+menu bar
+</li>
+<li>
+tool bar
+</li>
+</ul>
+
+
+<p>
+The mode line is replaced by a thin separator line. The following
+variables are intended for user customizations:
+</p>
+
+
+
+<pre class="src src-emacs-lisp">(<span style="color: #afeeee; font-weight: bold;">defvar</span> <span style="color: #40e0d0; font-weight: bold;">minimal-zap-mode-line</span> t
+  <span style="color: #87cefa;">"Should the mode line be turned into a thin separator line?"</span>)
+
+(<span style="color: #afeeee; font-weight: bold;">defvar</span> <span style="color: #40e0d0; font-weight: bold;">minimal-zap-scroll-bar</span> t
+  <span style="color: #87cefa;">"Should the scroll bars be removed?"</span>)
+
+(<span style="color: #afeeee; font-weight: bold;">defvar</span> <span style="color: #40e0d0; font-weight: bold;">minimal-zap-menu-bar</span> t
+  <span style="color: #87cefa;">"Should the menu bar be removed?"</span>)
+
+(<span style="color: #afeeee; font-weight: bold;">defvar</span> <span style="color: #40e0d0; font-weight: bold;">minimal-zap-tool-bar</span> t
+  <span style="color: #87cefa;">"Should the tool bar be removed?"</span>)
+
+(<span style="color: #afeeee; font-weight: bold;">defvar</span> <span style="color: #40e0d0; font-weight: bold;">minimal-mode-line-background</span> <span style="color: #87cefa;">"red"</span>
+  <span style="color: #87cefa;">"Background colour for active mode line face when minimal minor
+  mode is active"</span>)
+
+(<span style="color: #afeeee; font-weight: bold;">defvar</span> <span style="color: #40e0d0; font-weight: bold;">minimal-mode-line-inactive-background</span> <span style="color: #87cefa;">"grey"</span>
+  <span style="color: #87cefa;">"Background colour for inactive mode line face when minimal
+  minor mode is active"</span>)
+
+(<span style="color: #afeeee; font-weight: bold;">defvar</span> <span style="color: #40e0d0; font-weight: bold;">minimal-mode-line-height</span> 0.1
+  <span style="color: #87cefa;">"Height of mode line when minimal minor mode is active"</span>)
+</pre>
+
+
+<div id="postamble">
+<p class="author"> Author: Dan Davison
+</p>
+<p class="date"> Date: 2010-07-29 12:18:56 EDT</p>
+<p class="creator">HTML generated by org-mode 7.01trans in emacs 23</p>
+</div>
+</div>
+</body>
+</html>

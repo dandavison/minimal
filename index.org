@@ -1,0 +1,42 @@
+#+title:minimal.el: minimalist visual appearance for Emacs
+#+author:Dan Davison
+
+
+[[file:davison-minimal-research.png][file:davison-minimal-research-thumb.png]]
+
+minimal.el adds a minor mode providing a minimalist appearance for
+Emacs. Toggle the minor mode with =M-x minimal-mode=. By default, this
+gets rid of
+
+- mode line
+- scroll bars
+- menu bar
+- tool bar
+
+The mode line is replaced by a thin separator line. The following
+variables are intended for user customizations:
+
+#+begin_src emacs-lisp
+(defvar minimal-zap-mode-line t
+  "Should the mode line be turned into a thin separator line?")
+
+(defvar minimal-zap-scroll-bar t
+  "Should the scroll bars be removed?")
+
+(defvar minimal-zap-menu-bar t
+  "Should the menu bar be removed?")
+
+(defvar minimal-zap-tool-bar t
+  "Should the tool bar be removed?")
+
+(defvar minimal-mode-line-background "red"
+  "Background colour for active mode line face when minimal minor
+  mode is active")
+
+(defvar minimal-mode-line-inactive-background "grey"
+  "Background colour for inactive mode line face when minimal
+  minor mode is active")
+
+(defvar minimal-mode-line-height 0.1
+  "Height of mode line when minimal minor mode is active")
+#+end_src
