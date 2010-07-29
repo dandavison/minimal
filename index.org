@@ -1,4 +1,4 @@
-#+title:minimal.el: minimalist visual appearance for Emacs
+#+title:minimal.el -- minimalist visual appearance for Emacs
 #+author:Dan Davison
 
 [[file:davison-minimal-research.png][file:davison-minimal-research-thumb.png]]
