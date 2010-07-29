@@ -1,12 +1,14 @@
 #+title:minimal.el: minimalist visual appearance for Emacs
 #+author:Dan Davison
 
-
 [[file:davison-minimal-research.png][file:davison-minimal-research-thumb.png]]
 
-minimal.el adds a minor mode providing a minimalist appearance for
-Emacs. Toggle the minor mode with =M-x minimal-mode=. By default, this
-gets rid of
+[[http://github.com/dandavison/minimal][minimal.el]] adds a minor mode providing a minimalist visual appearance
+for Emacs. The screenshot[1] above shows the entire screen of my
+netbook.
+
+Toggle the minor mode with =M-x minimal-mode=. By default, this gets
+rid of
 
 - mode line
 - scroll bars
@@ -40,3 +42,9 @@ variables are intended for user customizations:
 (defvar minimal-mode-line-height 0.1
   "Height of mode line when minimal minor mode is active")
 #+end_src
+
+
+* Footnotes
+
+[1] Transparent emacs running in fullscreen mode; Desktop used for
+Hubble image backdrop only; gnome under ubuntu 10.04
