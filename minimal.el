@@ -44,7 +44,7 @@
 (defvar minimal-zap-tool-bar t
   "Should the tool bar be removed?")
 
-(defvar minimal-mode-line-background "red"
+(defvar minimal-mode-line-background "darkred"
   "Background colour for active mode line face when minimal minor
   mode is active")
 
