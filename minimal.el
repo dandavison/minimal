@@ -101,6 +101,8 @@
     (add-hook 'after-change-major-mode-hook 'minimal-mode))
    (t
     ;; turn off
+    ;; TODO: This turns off on a per-buffer basis.
+    ;; how to turn off for all buffers?
     (when minimal-zap-mode-line
        (setq face-remapping-alist
 	    (assq-delete-all 'mode-line
