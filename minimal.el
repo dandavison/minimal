@@ -55,6 +55,9 @@
 (defvar minimal-mode-line-height 0.1
   "Height of mode line when minimal minor mode is active")
 
+(defvar minimal-mode-hook nil
+  "Hook run after switching to `minimal-mode'")
+
 (defvar minimal-mode-map (make-sparse-keymap))
 (defvar minimal-zapped-scroll-bar nil)
 (defvar minimal-zapped-menu-bar nil)
