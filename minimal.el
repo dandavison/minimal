@@ -48,7 +48,7 @@
   "Background colour for active mode line face when minimal minor
   mode is active")
 
-(defvar minimal-mode-line-inactive-background "grey"
+(defvar minimal-mode-line-inactive-background "dim grey"
   "Background colour for inactive mode line face when minimal
   minor mode is active")
 
