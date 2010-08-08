@@ -101,14 +101,12 @@
     (add-hook 'after-change-major-mode-hook 'minimal-mode))
    (t
     ;; turn off
-    ;; TODO: This turns off on a per-buffer basis.
-    ;; how to turn off for all buffers?
     (when minimal-zap-mode-line
        (setq face-remapping-alist
 	    (assq-delete-all 'mode-line
 			     (assq-delete-all 'mode-line-inactive
 					      face-remapping-alist))))
-    (minimal-restore-mode-line)
+    (mapc 'minimal-restore-mode-line (buffer-list))
    (when (and (not scroll-bar-mode) minimal-zapped-scroll-bar)
       (scroll-bar-mode +1))
     (when (and (not menu-bar-mode) minimal-zapped-menu-bar)
